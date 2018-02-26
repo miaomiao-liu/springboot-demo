@@ -1,10 +1,9 @@
 package com.liuyiqing.service;
 
-import com.liuyiqing.GirlRepository;
 import com.liuyiqing.domain.Girl;
+import com.liuyiqing.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by miaomiao on 18-2-25.

@@ -1,6 +1,6 @@
 package com.liuyiqing.controller;
 
-import com.liuyiqing.GirlRepository;
+import com.liuyiqing.repository.GirlRepository;
 import com.liuyiqing.domain.Girl;
 import com.liuyiqing.service.GirlService;
 import org.springframework.beans.factory.annotation.Autowired;
