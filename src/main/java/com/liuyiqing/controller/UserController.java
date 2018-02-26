@@ -3,6 +3,7 @@ package com.liuyiqing.controller;
 import com.liuyiqing.domain.User;
 import com.liuyiqing.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,15 @@ public class UserController {
         return "自定义SQL删除成功";
     }
 
+
+    @RequestMapping("/cutPage")
+    public List<User> cutPage(int page){
+        User user = new User();
+        user.setPage(page);
+        user.setSize(2);
+        //创建分页的对象
+        PageRequest pageRequest = new PageRequest(user.getPage()-1,user.getSize());
+        return userRepository.findAll(pageRequest).getContent();
+    }
 
 }

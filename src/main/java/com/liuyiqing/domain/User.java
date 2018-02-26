@@ -1,5 +1,7 @@
 package com.liuyiqing.domain;
 
+import com.liuyiqing.base.Base;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,7 +10,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "t_user")
-public class User implements Serializable {
+public class User extends Base implements Serializable {
 
     @Id
     @GeneratedValue
