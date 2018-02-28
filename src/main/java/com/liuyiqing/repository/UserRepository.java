@@ -1,6 +1,7 @@
 package com.liuyiqing.repository;
 
 import com.liuyiqing.domain.User;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -26,6 +27,13 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Query(value = "delete from t_user where t_name = ?1 and t_address = ?2",nativeQuery = true)
     void deleteQuery(String name,String address);
 
+    List<User> findByAge(int age);
 
+
+    //查询 like关键字的运用
+    @Query("select o from User o where o.name like ?1%")
+    List<User> findByName(String name);
+
+    Page<Object[]> getByCondition(User u);
 
 }

@@ -22,6 +22,11 @@ public class Base  implements Serializable{
      */
     protected String sidx = "id";
 
+    /**
+     * 排序方式
+     */
+    protected String sord = "asc";
+
     public int getPage() {
         return page;
     }
@@ -44,5 +49,13 @@ public class Base  implements Serializable{
 
     public void setSidx(String sidx) {
         this.sidx = sidx;
+    }
+
+    public String getSord() {
+        return sord;
+    }
+
+    public void setSord(String sord) {
+        this.sord = sord;
     }
 }

@@ -10,6 +10,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "t_user")
+//在实体类上使用@NamedQuery,在实现的DAO的Repository接口里面定义一个同名的方法,Spring会先找是否有同名的NamedQuery，如果有，那么就不会按照接口定义的方法来解析。
+@NamedQuery(name = "User.findByAge",query = "select o from User o where o.age >= ?1")
 public class User extends Base implements Serializable {
 
     @Id
